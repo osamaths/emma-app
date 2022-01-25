@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Welcome from '../screens/Welcome';
 import Questions from '../screens/Questions';
+import {colors} from '../js/sharedStyle';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,7 @@ function Routers() {
         <Stack.Screen
           name="questions"
           component={Questions}
-          options={{title: ''}}
+          options={{title: '', headerTintColor: colors.primary}}
         />
       </Stack.Navigator>
     </NavigationContainer>
