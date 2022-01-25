@@ -15,7 +15,11 @@ function Routers() {
           component={Welcome}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="questions" component={Questions} />
+        <Stack.Screen
+          name="questions"
+          component={Questions}
+          options={{title: ''}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
