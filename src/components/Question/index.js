@@ -3,14 +3,14 @@ import {View, StyleSheet, Text, TextInput} from 'react-native';
 import QuestionOption from '../QuestionOption';
 
 const Question = ({question: obj = {}, onFillAnswer}) => {
-  const {question, options = [], type} = obj;
+  const {_id, question, options = [], type} = obj;
   const [selected, setSelected] = useState('');
 
   const isOptions = type === 'options' && options.length > 0;
 
   const onSelectAnswer = answer => {
     setSelected(answer);
-    onFillAnswer({[question]: answer});
+    onFillAnswer({[_id]: answer});
   };
 
   return (
