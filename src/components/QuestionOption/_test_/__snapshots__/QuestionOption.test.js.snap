@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "flex-start",
+      "marginBottom": 8,
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "#102027",
+          "borderRadius": 25,
+          "borderWidth": 2,
+          "height": 22,
+          "justifyContent": "center",
+          "marginRight": 8,
+          "width": 22,
+        },
+        Object {
+          "borderColor": "#4db6ac",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#4db6ac",
+          "borderRadius": 25,
+          "height": 13,
+          "width": 13,
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#102027",
+          "fontSize": 14,
+          "fontWeight": "500",
+        },
+        Object {},
+      ]
+    }
+  />
+</View>
+`;
