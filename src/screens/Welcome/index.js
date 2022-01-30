@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 18,
     fontWeight: '500',
+    color: '#000',
   },
   content: {
     flex: 1,

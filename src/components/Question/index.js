@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, Text, TextInput} from 'react-native';
 import {QUESTIONS_SCREEN} from '../../../e2e/e2eIDs';
+import {colors} from '../../js/sharedStyle';
 import QuestionOption from '../QuestionOption';
 
 const Question = ({question: obj = {}, onFillAnswer}) => {
@@ -37,6 +38,7 @@ const Question = ({question: obj = {}, onFillAnswer}) => {
           textID={QUESTIONS_SCREEN.question + '-' + question + '-' + 'input'}
           onChangeText={onSelectAnswer}
           placeholder="Write your answer"
+          placeholderTextColor={'#aaa'}
         />
       )}
     </View>
@@ -54,10 +56,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     marginBottom: 4,
+    color: colors.text,
   },
   input: {
     marginTop: 4,
     borderBottomWidth: 1,
     borderBottomColor: '#aaa',
+    color: colors.text,
+    padding: 0,
   },
 });
