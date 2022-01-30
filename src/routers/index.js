@@ -2,7 +2,7 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Welcome from '../screens/Welcome';
-import Questions from '../screens/Questions';
+import QuestionsScreen from '../screens/QuestionsScreen';
 import {colors} from '../js/sharedStyle';
 
 const Stack = createNativeStackNavigator();
@@ -18,7 +18,7 @@ function Routers() {
         />
         <Stack.Screen
           name="questions"
-          component={Questions}
+          component={QuestionsScreen}
           options={{title: '', headerTintColor: colors.primary}}
         />
       </Stack.Navigator>

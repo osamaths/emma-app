@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, Text, TextInput} from 'react-native';
+import {QUESTIONS_SCREEN} from '../../../e2e/e2eIDs';
 import QuestionOption from '../QuestionOption';
 
 const Question = ({question: obj = {}, onFillAnswer}) => {
@@ -14,7 +15,9 @@ const Question = ({question: obj = {}, onFillAnswer}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      testID={QUESTIONS_SCREEN.question + '-' + question._id}>
       <Text style={styles.question}>{question}</Text>
       {isOptions && (
         <View style={styles.options}>
@@ -31,6 +34,7 @@ const Question = ({question: obj = {}, onFillAnswer}) => {
       {!isOptions && (
         <TextInput
           style={styles.input}
+          textID={QUESTIONS_SCREEN.question + '-' + question + '-' + 'input'}
           onChangeText={onSelectAnswer}
           placeholder="Write your answer"
         />

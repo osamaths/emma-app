@@ -1,6 +1,7 @@
 import {StackActions, useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
+import {WELCOME_SCREEN} from '../../../e2e/e2eIDs';
 import Btn from '../../components/shared/Btn';
 
 const Welcome = ({}) => {
@@ -10,10 +11,16 @@ const Welcome = ({}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to Emma Quiz App.</Text>
+      <Text style={styles.welcome} testID={WELCOME_SCREEN.welcome_text}>
+        Welcome to Emma Quiz App.
+      </Text>
 
       <View style={styles.content}>
-        <Btn onPress={onStartQuiz} title="Start Quiz" />
+        <Btn
+          onPress={onStartQuiz}
+          title="Start Quiz"
+          testID={WELCOME_SCREEN.btn}
+        />
       </View>
     </View>
   );

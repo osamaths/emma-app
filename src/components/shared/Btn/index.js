@@ -9,13 +9,15 @@ const Btn = ({
   disabled,
   style = {},
   titleStyle = {},
+  ...rest
 }) => {
   return (
     <TouchableOpacity
       style={[styles.container, style]}
       loading={loading}
       disabled={disabled}
-      onPress={onPress}>
+      onPress={onPress}
+      {...rest}>
       <Text style={[styles.title, titleStyle]}>{title}</Text>
     </TouchableOpacity>
   );

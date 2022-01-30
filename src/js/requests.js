@@ -1,9 +1,10 @@
 import axios from 'axios';
-import {Platform} from 'react-native';
+// import {Platform} from 'react-native';
 
 export const BASE_URL =
   'http://' +
-  (Platform.OS === 'android' ? '10.0.2.2' : 'localhost') +
+  // (Platform.OS === 'android' ? '10.0.2.2' : 'localhost') +
+  'localhost' +
   ':5000/api/v1';
 
 export const GET_REQUEST = async (endpoint = '', resolve, reject) => {

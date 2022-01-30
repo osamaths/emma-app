@@ -1,13 +1,14 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {View, StyleSheet, ScrollView, ActivityIndicator} from 'react-native';
+import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import {showMessage} from 'react-native-flash-message';
-import Question from '../../components/Question';
+import {QUESTIONS_SCREEN} from '../../../e2e/e2eIDs';
+import Questions from '../../components/Questions';
 import Btn from '../../components/shared/Btn';
 import {GET_REQUEST, POST_REQUEST} from '../../js/requests';
 import {colors} from '../../js/sharedStyle';
 
-const Questions = ({}) => {
+const QuestionsScreen = ({}) => {
   const [list, setList] = useState([]);
   const [answers, setAnswers] = useState({});
   const [fetching, setFetching] = useState(true);
@@ -51,22 +52,14 @@ const Questions = ({}) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID={QUESTIONS_SCREEN.container}>
       {fetching && (
         <ActivityIndicator
           style={styles.activityIndicator}
           color={colors.primary}
         />
       )}
-      <ScrollView style={styles.scroll} contentContainerStyle={styles.list}>
-        {list?.map(question => (
-          <Question
-            key={question.question}
-            question={question}
-            onFillAnswer={onFillAnswer}
-          />
-        ))}
-      </ScrollView>
+      <Questions list={list} onFillAnswer={onFillAnswer} />
       <View style={styles.submitContainer}>
         <Btn title="Submit Answers" onPress={onSubmit} loading={submitting} />
       </View>
@@ -74,15 +67,11 @@ const Questions = ({}) => {
   );
 };
 
-export default Questions;
+export default QuestionsScreen;
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: 'white'},
-  scroll: {flex: 1},
-  list: {
-    flexGrow: 1,
-    paddingVertical: 30,
-  },
+
   activityIndicator: {
     position: 'absolute',
     top: 0,
